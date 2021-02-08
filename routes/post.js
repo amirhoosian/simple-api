@@ -31,14 +31,14 @@ routerpost.get("/:id", (req, res) => {
 
 routerpost.patch("/:id", (req, res) => {
   postschema
-    .updateOne({ __id: req.params.id }, { $set: { title: req.body.title } })
+    .updateOne({ _id: req.params.id }, { $set: { title: req.body.title } })
     .then((data) => res.json(data))
     .catch((err) => res.json(err));
 });
 
 routerpost.delete("/:id", (req, res) => {
   postschema
-    .remove({ __id: req.params.id })
+    .remove({ _id: req.params.id })
     .then((data) => res.json(data))
     .catch((err) => res.json(err));
 });
